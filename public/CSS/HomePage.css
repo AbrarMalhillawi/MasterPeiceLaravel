@@ -1,0 +1,394 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+/* css for pic landing Page */
+/* .landingPage
+{
+   background-image: url("../PIC/LandingNEW.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100vh;
+} */
+
+
+/* css for title landing page  */
+.TitleInLandingPage
+{
+    font-weight:bolder;
+    font-size: larger;
+    color: white;
+    text-align: center;
+    padding-top: 9.5em;
+
+}
+.TitleInLandingPage>h1>pre
+{
+    font-family: 'Passion One', cursive;
+}
+.TitleInLandingPage>h1>pre>span
+{
+    color:rgb(143, 6, 93);
+    font-weight:bolder;
+    font-size:xx-large;
+    font-family:'Times New Roman', Times, serif;
+}
+
+
+/* CSS TO SHOW BUTTON SHOP AND BOOK */
+#buttonsBookShop
+{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.BUTTONLANDING>button
+{
+    color: aliceblue;
+    font-weight: bold;
+    
+    border: 2px solid ;
+     border-color: rgb(99, 17, 69);
+     background-color: rgb(100, 77, 90);
+     margin: 6px;
+}
+
+
+.BUTTON>button
+{
+     color: aliceblue;
+     border-color: rgb(187, 8, 121); 
+     background-color:  rgb(166, 29, 116);
+
+}
+.BUTTON>button:hover
+{
+    font-size: larger;
+}
+
+
+/* //////////////////// START CSS  FOR SLIDER BRAND //////////////////*/
+@keyframes scroll
+{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 2));
+    }
+}
+.slider
+{
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position:relative;
+    width: auto;
+    padding: 3%;
+}
+
+.slider .slide-track
+{
+    animation: scroll 10s linear infinite;
+    display: flex;
+    width:calc(250 * 10);
+}
+
+.slider .slide
+{
+    height: 100px;
+    width:250px;
+}
+
+
+
+/* //////////////////// END CSS  FOR SLIDER BRAND //////////////////*/
+
+
+/* //////////////////// START CSS  FOR CUT PIC //////////////////*/
+.cut_pic{
+    width:100% ;
+    margin-top: 4%;
+    display: flex;
+    padding: 3%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    background-color: #f2f5f8;
+    
+}
+
+.cut
+{
+    color:#676c71;
+    font-family:'Times New Roman', Times, serif
+}
+
+/* //////////////////// END CSS  FOR CUT PIC //////////////////*/
+
+
+/* //////////////////// START CSS  FOR CATEGORY //////////////////*/
+#category
+{
+    width:100% ;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding: 3%;
+
+    }
+    
+
+    #category>div
+    {
+        border: 0px solid;
+        box-shadow: 10px 10px 10px 2px  #676c71;
+        border-radius: 2%;
+        
+    }
+
+/* //////////////////// END CSS  FOR CATEGORY //////////////////*/
+
+
+    .SaleProduct
+    {
+        margin-top: 4%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 3%;
+    }
+
+    
+
+
+    .sale_product>h5
+    {
+        margin-top: 8%;
+       text-align: center;
+        color:#676c71;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .sale_product>h2
+    {
+       text-align: center;
+        color:black;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 3%;  
+    }
+
+    .arrow>i
+    {
+    margin-top: 110px;
+    font-size: xx-large;
+    color: rgb(166, 29, 116);
+    }
+
+
+
+    .sectionPrice
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 6%;
+      
+
+    }
+
+    #PoxPricePairent
+    {
+        height: auto;
+        width: 60%;
+        /* padding: 2%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: #e0e4e8;
+        align-items: center;
+        height: 37em;
+        border: 0px solid;
+        box-shadow: 10px 10px 10px 2px  rgb(100, 43, 79);
+    }
+
+
+#PoxPricePairent>div
+{
+ margin-bottom: 2%;
+ width: 60%;
+ height: 16em;
+ background-color: #f5f8fc;
+ padding:1%;
+ border: 0px solid;
+ box-shadow: 10px 10px 10px 2px  #676c71;
+ border-radius: 2%;
+}
+
+
+#PoxPricePairent>div>div>h3
+{
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: bold;
+
+}
+
+#PoxPricePairent>div>div>h4
+{
+ font-family: 'Times New Roman', Times, serif;
+ color: #676c71;
+ 
+}
+
+.containerDiscount
+{
+    margin: 5%;
+    border: 0px solid ;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 6px 6px rgba(0,0,0,0.19);
+    /* box-shadow: 10px 6px  10px 2px  #676c71; */
+}
+
+
+
+.prev>i{
+    margin-top: 1em;
+    margin-left: -2.5em;
+    font-size: 50px;
+    /* width: 7px; */
+    font-weight: bolder;
+    color:rgb(15, 13, 13);
+}
+.next>i{
+    /* margin-top: 1em; */
+    margin-left:2.5em;
+    font-size: 50px;
+    /* width: 7px; */
+    font-weight: bolder;
+    color:rgb(15, 13, 13);
+}
+
+
+/* icon soscial media in footer */
+.icons>i
+{
+    color:rgb(166, 29, 116);
+}
+
+
+
+
+
+
+
+
+
+/* /////////////////////////CSS FOR LANDING PAGE AND NAV BAR////////////////////// */
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.Head{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url("../PIC/LandingNEW.jpg");
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.navFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 17px;
+
+}
+
+.Logo{
+    width: 70px;
+    height: 70px;
+}
+nav li {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 24px;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color:rgb(166, 29, 116);
+}
+
+.SearchBar{
+    height: 28px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.SearchBar input{
+    width: 0px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 1s;
+    background: transparent;
+}
+
+.SearchBar:hover input{
+    width: 120px;
+}
+.SearchBar a .fas{
+    color: rgb(166, 29, 116);
+    font-size: 18px;
+}
+
+.icon{
+    color: white;
+}
+
+.icons a{
+    text-decoration: none;
+}
+.icon:hover{
+    color: rgb(166, 29, 116);
+  
+}
+
+/* ///////////////////////// END CSS FOR LANDING PAGE AND NAV BAR////////////////////// */
+
+
+
+

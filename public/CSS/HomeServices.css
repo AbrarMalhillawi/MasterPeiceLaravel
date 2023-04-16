@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Lobster&family=Merriweather:wght@700&display=swap');
+
+
+/* /////////////////////////CSS FOR LANDING PAGE AND NAV BAR////////////////////// */
+
+
+
+* {
+    
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.Head{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url("../PIC/homeservics/homeservices.jpg");
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.navFlex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 17px;
+
+}
+
+.Logo{
+    width: 70px;
+    height: 70px;
+}
+nav li {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 24px;
+
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover{
+    text-decoration: none;
+    color:rgb(166, 29, 116);
+}
+
+.SearchBar{
+    height: 28px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.SearchBar input{
+    width: 0px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 1s;
+    background: transparent;
+}
+
+.SearchBar:hover input{
+    width: 120px;
+}
+.SearchBar a .fas{
+    color: rgb(166, 29, 116);
+    font-size: 18px;
+}
+
+.icon{
+    color: white;
+}
+
+.icons a{
+    text-decoration: none;
+}
+.icon:hover{
+    color: rgb(166, 29, 116);
+  
+}
+
+
+
+.title
+{
+    color: rgb(184, 187, 187) ;
+    background-color: rgb(184, 187, 187);
+    opacity: 0.3;
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    height:60px;
+    text-align: center;
+}
+div>h2
+{
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    text-align: center; 
+
+    font-family: 'Merriweather', serif;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+/* ///////////////////////// END CSS FOR LANDING PAGE AND NAV BAR////////////////////// */
+
+
+
+
+/* ///////////////////////// START CSS FOR CARDS ////////////////////// */
+
+
+/* Start css for cards  */
+.cards
+{
+   
+    padding: 2%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
+
+
+.card{
+    border: 0 solid white;
+    box-shadow: 9px 9px 9px 2px  rgb(87, 75, 78);
+
+}
+/*End  css for cards  */
+
+/* css for button book now in cards */
+.cards>div>div>a
+{
+    border:2px solid white;
+    background-color:rgb(182, 65, 139);
+}
+.cards>div>div>a:hover
+{
+    background-color:rgb(142, 2, 93) ;
+    border:2px solid white;
+    font-size: large;
+}
+ 
+/*End  css for button in cards  */
+
+
+/* start css for section qoutes */
+
+.quote
+{
+   
+    /* margin: 1%; */
+    padding: 5%;
+    text-align: center;
+    /* font-family: 'Yellowtail', cursive; */
+    font-family: 'Courgette', cursive;
+    /* background-image: url("../PIC/homeservics/qoutes4.jpg"); */
+    /* background-color: rgb(223, 212, 221); */
+   
+  
+}
+/* ///////////////////////// END CSS FOR CARDS ////////////////////// */
