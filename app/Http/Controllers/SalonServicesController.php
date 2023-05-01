@@ -28,6 +28,17 @@ class SalonServicesController extends Controller
         return view('admin.Services.SalonServices.create');
     }
 
+
+
+    // public function create2($id)
+    // {
+    //     $SalonService = SalonServices::find($id);
+        
+    //     return view('admin.Services.SalonServices.create',compact('SalonService'));
+
+    // }
+
+
     /**
      * Store a newly created resource in storage.
      *

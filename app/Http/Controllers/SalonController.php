@@ -17,10 +17,7 @@ class SalonController extends Controller
     //  to show salons in admin page
     public function index()
     { 
-         $salons=Salon::all();
-         
-        //  return view('user.Salonat',compact('salons'));
-         
+        $salons=Salon::all();
         return view('admin.salons.index',compact('salons'));
     }
 

@@ -15,9 +15,6 @@ class HomeServiceController extends Controller
     public function index()
     {
         $homeservices=HomeService::all();
-
-        // return view('user.homeservices',compact('homeservices'));
-
         return view('admin.HomeServices.index',compact('homeservices'));
     }
 

@@ -64,22 +64,22 @@
               Here you can use rows and columns to organize your footer content. </p>
                     <!-- socialMedia -->
       <div>
-        <a href="" class="me-4 link-secondary icons">
+        <a href="https://www.facebook.com/" class="me-4 link-secondary icons">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="" class="me-4 link-secondary icons">
+        <a href="https://twitter.com/" class="me-4 link-secondary icons">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="" class="me-4 link-secondary icons">
+        {{-- <a href="https://www.google.com/" class="me-4 link-secondary icons">
           <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 link-secondary icons">
+        </a> --}}
+        <a href="https://www.instagram.com/" class="me-4 link-secondary icons">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="" class="me-4 link-secondary icons">
+        <a href="https://www.linkedin.com/in/abrar-alhillawi-176234253/" class="me-4 link-secondary icons">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="" class="me-4 link-secondary icons">
+        <a href="https://github.com/AbrarMalhillawi" class="me-4 link-secondary icons">
           <i class="fab fa-github"></i>
         </a>
       </div>
@@ -94,13 +94,13 @@
               Our Salons
             </h6>
             <p>
-              <a href="#!" class="text-reset">Loacation</a>
+              <a href="/contact" class="text-reset">Contact Us</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Contact Us</a>
+              <a href="/about" class="text-reset">About Us</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">About Us</a>
+              <a href="#" class="text-reset">Loacation</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -113,12 +113,12 @@
             </h6>
             <p>
               Monday-friday</p>
-            <p>09:00-22:00</p>
-            <P> .</P>
+            <p>09:00am-12:00pm</p>
+            {{-- <P> .</P> --}}
 
             <p>Saturday-sunday</p>
 
-            <p>11:00-00:00</p>
+            <p>10:00am-11:30pm</p>
           </div>
           <!-- Grid column -->
 

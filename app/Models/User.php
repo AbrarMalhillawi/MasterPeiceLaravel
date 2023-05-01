@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Reservation;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -38,6 +38,12 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+
+    
+    public function SalonReservation2(){
+        return $this->hasMany(Reservation::class);
+    }
 
     /**
      * The attributes that should be cast.

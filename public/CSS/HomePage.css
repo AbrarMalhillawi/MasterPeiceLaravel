@@ -37,21 +37,19 @@
 /* CSS TO SHOW BUTTON SHOP AND BOOK */
 #buttonsBookShop
 {
-    display: flex;
-    flex-direction: row;
+    /* display: flex;
+    flex-direction: row; */
     text-align: center;
     justify-content: center;
-
 }
 
 .BUTTONLANDING>button
 {
     color: aliceblue;
     font-weight: bold;
-    
     border: 2px solid ;
-     border-color: rgb(99, 17, 69);
-     background-color: rgb(100, 77, 90);
+    border-color: rgb(99, 17, 69);
+    background-color: rgb(100, 77, 90);
      margin: 6px;
 }
 

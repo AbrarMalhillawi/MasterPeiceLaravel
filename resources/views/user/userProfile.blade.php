@@ -42,13 +42,26 @@
             
             <img class="Logo" src="">
                 <ul>
-                    <li><a href="/homepage">HOME</a></li>
-                    <li><a href="{{route('salon.index')}}">Salonat</a></li>
-                    <li><a href="{{route('homeServices.index')}}">Home Services</a></li>
+                    <li><a href="/homepage">Home</a></li>
+                    <li><a href="/SalonUser">Salonat</a></li>
+                        <li><a href="/HomeUser">Home Services</a></li>
                     {{-- <li><a href="">PRODUCT</a></li> --}}
-                    <li><a href="/about">ABOUT</a></li>
-                    <li><a href="/contact">CONTACT</a></li>
-                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    @if (!Auth::user())
+                    <li><a href="/regester">Rergeter</a></li>
+                   <li><a href="/login">Login</a></li>
+
+                   @else
+                   {{-- <li><a href="/Account">Account</a></li> --}}
+                  <li><a href="{{route('logout')}}">Logout</a></li>
+                   <a href="/userProfile" > <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color:rgb(166, 29, 116);">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+                    </svg> </a>
+
+                    @endif
                 </ul>
                 {{-- search icon in nav bar --}}
                  <div class="SearchBar">   
@@ -57,33 +70,11 @@
                         <i class="fas fa-search"></i>
                     </a>
                 </div> 
-                   {{--  start icon for navbar --}}
-                <div class="icons">
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                    </svg> </a>
-                    
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="6" cy="19" r="2"></circle>
-                        <circle cx="17" cy="19" r="2"></circle>
-                        <path d="M17 17h-11v-14h-2"></path>
-                        <path d="M6 5l14 1l-1 7h-13"></path>
-                    </svg> </a>
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-world" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="12" cy="12" r="9"></circle>
-                        <line x1="3.6" y1="9" x2="20.4" y2="9"></line>
-                        <line x1="3.6" y1="15" x2="20.4" y2="15"></line>
-                        <path d="M11.5 3a17 17 0 0 0 0 18"></path>
-                        <path d="M12.5 3a17 17 0 0 1 0 18"></path>
-                    </svg> </a>
-                </div>
-                   {{--  end icon for navbar --}}
+                
 
         </nav>
+       
+        {{-- {{Auth()->user()->User_Image}} --}}
     {{-- just to read information  --}}
     <div class="page-content page-container" id="page-content">
         <div class="padding">
@@ -94,7 +85,9 @@
                                                             <div class="col-sm-4 bg-c-lite-green user-profile">
                                                                 <div class="card-block text-center text-white">
                                                                     <div class="m-b-25">
-                                                                        <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+                                                                        {{-- <img src="{{URL::asset('storage/userimage/'.$user->User_Image)}}" alt="Avatar" class="rounded-circle" /> --}}
+                                                                        <img src="{{ asset('storage/userimage/' . Auth::user()->User_Image) }}" class="img-radius image_profile" alt="User Image">
+                                                                        
                                                                     </div>
                                                                     <h6 class="f-w-600">{{Auth()->user()->name}}</h6>
                                                                     <a style="font-size:30px;color:aliceblue" href="/editUserProfile"> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i></a>
@@ -108,10 +101,10 @@
                                                                             <p class="m-b-10 f-w-600">Email</p>
                                                                             <h6 class="text-muted f-w-400">{{Auth()->user()->email}}</h6>
                                                                         </div>
-                                                                        <div class="col-sm-6">
+                                                                        {{-- <div class="col-sm-6">
                                                                             <p class="m-b-10 f-w-600">Password</p>
                                                                             <h6 class="text-muted f-w-400">{{Auth()->user()->password}}</h6>
-                                                                        </div>
+                                                                        </div> --}}
 
                                                                     </div>
                                                                     <br/>

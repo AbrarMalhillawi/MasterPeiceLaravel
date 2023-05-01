@@ -39,27 +39,29 @@
             <img class="Logo" src="">
                 <ul>
                  
-                    <li><a href="/homepage" style="color:rgb(166, 29, 116);">HOME</a></li>
-                    <li><a href="{{route('salon.index')}}">Salonat</a></li>
-                    <li><a href="{{route('homeServices.index')}}">Home Services</a></li>
-                    {{-- <li><a href="">PRODUCT</a></li> --}}
-                    <li><a href="/about">ABOUT</a></li>
-                    <li><a href="/contact">CONTACT</a></li>
-                    <!-- <li><a href="">REGISTER</a></li> -->
+                    <li><a href="/homepage" style="color:rgb(166, 29, 116);">Home</a></li>
+                    {{-- <li><a href="{{route('salon.index')}}">Salonat</a></li> --}}
+                    <li><a href="/SalonUser">Salonat</a></li>
+                    <li><a href="/HomeUser">Home Services</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                     @if (!Auth::user())
                     <li><a href="/regester">REGISTER</a></li>
                    <li><a href="/login">LOGIN</a></li>
 
                    @else
-                   {{-- <li><a href="/Account">Account</a></li> --}}
-                  <li><a href="{{route('logout')}}">LOGOUT</a></li>
-                   <a href="/userProfile"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                    </svg> </a>
+                   @if (auth()->user()->role!='User')
+                   <li><a href="/userProfile">PROFILE</a></li>
+                   <li><a href="/admin" target="_blank">DASHBOARD</a></li>
+                   <li><a href="{{route('logout')}}">LOGOUT</a></li>
 
-                    @endif
+                   @else
+
+                   <li><a href="/userProfile">PROFILE</a></li>
+                   <li><a href="{{route('logout')}}">LOGOUT</a></li>
+
+                   @endif
+                   @endif
                     {{-- <li><a href="/login">LOGIN</a></li> --}}
                 </ul>
                  <div class="SearchBar">   
@@ -68,30 +70,6 @@
                         <i class="fas fa-search"></i>
                     </a>
                 </div> 
-
-                <div class="icons">
-                    {{-- <a href="{{route('user.index')}}"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                    </svg> </a> --}}
-                    
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="6" cy="19" r="2"></circle>
-                        <circle cx="17" cy="19" r="2"></circle>
-                        <path d="M17 17h-11v-14h-2"></path>
-                        <path d="M6 5l14 1l-1 7h-13"></path>
-                    </svg> </a>
-                    <a href=""> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-world" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="12" cy="12" r="9"></circle>
-                        <line x1="3.6" y1="9" x2="20.4" y2="9"></line>
-                        <line x1="3.6" y1="15" x2="20.4" y2="15"></line>
-                        <path d="M11.5 3a17 17 0 0 0 0 18"></path>
-                        <path d="M12.5 3a17 17 0 0 1 0 18"></path>
-                    </svg> </a>
-                </div>
 
         </nav>
                <!-- Title  Landing-->
@@ -104,11 +82,13 @@
       <!-- Button Book Now In Landing -->
       <div id="buttonsBookShop">
         <div class="BUTTONLANDING">
-          <button type="button" class="btn btn-outline-secondary">BOOK NOW</button>
+          
+          <button type="button" class="btn btn-outline-secondary" class="buttonbooknow" >BOOK NOW</button>
+          
         </div>
-        <div class="BUTTONLANDING">
+        {{-- <div class="BUTTONLANDING">
           <button type="button" class="btn btn-outline-secondary">SHOP NOW</button>
-        </div>
+        </div> --}}
       </div>
     </div>
 
@@ -193,26 +173,17 @@
   <div id="category">
     <!--HOME SERVICES category  -->
     <div>
-      <a href="/homeServices">
-        <img src="../pic/pic_category/home.png" height="350" width="350" alt="">
+      <a href="/HomeUser">
+        <img src="../pic/pic_category/home.png" height="450" width="450" alt="">
       </a>
 
     </div>
     <!-- SALON SERVICES CATEGORY -->
     <div>
-      <a href="/Salonat">
-        <img src="../pic/pic_category/salons.png" height="350" width="350" alt="">
+      <a href="/SalonUser">
+        <img src="../pic/pic_category/salons.png" height="450" width="450" alt="">
       </a>
     </div>
-    <!-- PRODUCT CATEGORY -->
-
-
-    <div>
-      <a>
-        <img src="../pic/pic_category/PRODUCTS.png" height="350" width="350" alt="">
-      </a>
-    </div>
-
 
   </div>
 
@@ -222,7 +193,7 @@
   <!-------------------------- END SECTION FOR CATEGORY ---------------------------->
 
 
-
+{{-- 
   <!-- SECTION FOR SALE PRODUCT -->
 
   <div class="sale_product">
@@ -291,7 +262,7 @@
 
 
   </div>
-  <!-- END SECTION FOR SALE PRODUCT -->
+  <!-- END SECTION FOR SALE PRODUCT --> --}}
 
 
   <!-- START SECTION FOR  PRICE -->
@@ -384,127 +355,7 @@
 
 
   <!-- Start Section for footer -->
-
-  <!-- Footer -->
-  <footer class="text-center text-lg-start bg-white text-muted">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-
-
-      <!-- <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div> -->
-
-
-      <!-- Left -->
-
-
-    </section>
-    <!-- Section: Social media -->
-
-    <!-- Section: Links  -->
-    <section class="">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3 text-secondary"></i>COTTON CANDY
-            </h6>
-            <p>
-              Here you can use rows and columns to organize your footer content. </p>
-                    <!-- socialMedia -->
-      <div>
-        <a href="" class="me-4 link-secondary icons">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 link-secondary icons">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 link-secondary icons">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 link-secondary icons">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 link-secondary icons">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 link-secondary icons">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- socialMedia -->
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Our Salons
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Loacation</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Contact Us</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">About Us</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Working Hours
-            </h6>
-            <p>
-              Monday-friday</p>
-            <p>09:00-22:00</p>
-            <P> .</P>
-
-            <p>Saturday-sunday</p>
-
-            <p>11:00-00:00</p>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-3 text-secondary"></i> Jordan, Aqaba</p>
-            <p>
-              <i class="fas fa-envelope me-3 text-secondary"></i>
-              cottonCandy@gmail.com
-            </p>
-            <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
-      </div>
-    </section>
-    <!-- Section: Links  -->
-
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
-      © 2023 Copyright:AbrarAlhillawi
-      <!-- <a class="text-reset fw-bold" href="https://mdbootstrap.com/"> </a>-->
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-
-
+  @include('component/footer')
   <!-- END Section for footer -->
 
 

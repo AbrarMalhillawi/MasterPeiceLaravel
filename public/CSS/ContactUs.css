@@ -22,12 +22,17 @@
   margin-top: 20px;
 }
 section{
-  padding: 100px;
+    padding-top: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
 }
+
 .Head{
     height: 110vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url("../PIC/pexels-negative-space-33999.jpg");
+    /* background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url("../PIC/contact-us-background-1.jpg"); */
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.3)),url("../PIC/contact.jpg");
     position: relative;
     background-size: cover;
     background-position: center;
@@ -216,25 +221,45 @@ width: 50%;
   box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
 }
 
+/* rgb(166, 29, 116)
+#8e5076 
+#b71579 
+#ee0795 */
+
+
+
 .contact3 .btn-danger-gradiant {
-  background: #ffca2cc4;
-  background: -webkit-linear-gradient(legacy-direction(to right), #ffca2cc4 0%, #ff6a5b 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#ffca2cc4), to(#ff6a5b));
-  background: -webkit-linear-gradient(left, #ffca2cc4 0%, #50f5d9c4 100%);
-  background: -o-linear-gradient(left, #ffca2cc4 0%, #ff6a5b 100%);
-  background: linear-gradient(to right, #ffca2cc4 0%, #50f5d9c4 100%);
+
+  background: #b71579;
+  background: -webkit-linear-gradient(legacy-direction(to right), #ee0795 0%, #65535e 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ee0795), to(#65535e));
+  background: -webkit-linear-gradient(left, #ee0795 0%, #430d2e 100%);
+  background: -o-linear-gradient(left, #ee0795 0%, #65535e 100%);
+  background: linear-gradient(to right, #ee0795 0%, #430d2e 100%);
 }
 
 .contact3 .btn-danger-gradiant:hover {
   background: #ff6a5b;
-  background: -webkit-linear-gradient(legacy-direction(to right), #50f5d9c4 0%, #ffca2cc4 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#ff6a5b), to(#50f5d9c4));
-  background: -webkit-linear-gradient(left, #ff6a5b 0%, #ffca2cc4 100%);
-  background: -o-linear-gradient(left, #ffca2cc4 0%, #50f5d9c4 100%);
-  background: linear-gradient(to right, #50f5d9c4 0%, #ffca2cc4 100%);
+  background: -webkit-linear-gradient(legacy-direction(to right), #430d2e 0%, #ee0795 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#65535e), to(#430d2e));
+  background: -webkit-linear-gradient(left, #65535e 0%, #ee0795 100%);
+  background: -o-linear-gradient(left, #ee0795 0%, #430d2e 100%);
+  background: linear-gradient(to right, #430d2e 0%, #ee0795 100%);
 }
 
 .img-fluid{
     width:700px;
     height:400px;
+}
+
+
+.imageIcon1
+{
+  width: 50px;
+  height: 50px;
+}
+.imageIcon
+{
+  width: 70px;
+  height: 65px;
 }

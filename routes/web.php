@@ -7,10 +7,16 @@ use App\Http\Controllers\SalonController;
 use App\Http\Controllers\SalonServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeUser;
 use App\Http\Controllers\LoginAdminController;
+use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\UserSalonBookController;
+use App\Http\Controllers\SalonUser;
 use App\Models\HomeServices_Services;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +67,8 @@ Route::get('/editUserProfile', function () {
 });
 
 
+
+
 // ////////////////////////////// login admin //////////////////////////////
 
 
@@ -74,34 +82,36 @@ Route::post('/CheckLogin' , [LoginAdminController::class,'login'])->name('CheckL
 
 // /group admin //////////////////////
 
-Route::middleware(['Admin'])->group(function(){
-
-    //////////////////admin dashboard ///////////////////////////////
-Route::get('/account', function () {
+Route::middleware(['Admin'])->group(function()
+{
+Route::get('/account', function () 
+{
     return view('admin.account');
 });
-
     Route::get('/admin', function () {
         return view('admin.dashboard');
     });
+
+
+
+// Route::get('/salonServicesCreate', [SalonServicesController::class,'create2']);
 /////////////////admin dashbopard ( user controller) ///////////////////////////
 Route::resource('/user',UserController::class);
 /////////////////admin dashbopard ( category controller) ///////////////////////////
 Route::resource('/category',CategoryController::class);
 /////////////////admin dashbopard ( home services) ///////////////////////////
 Route::resource('/homeServices',HomeServiceController::class);
-
 /////////////////admin dashbopard ( salon ) ///////////////////////////
-
 Route::resource('/salon',SalonController::class);
-
 /////////////////admin dashbopard ( salon-services ) ///////////////////////////
-
 Route::resource('/salonServices',SalonServicesController::class);
-
 /////////////////admin dashbopard ( salon-services ) ///////////////////////////
-
 Route::resource('/homeServices_Services',HomeServicesServicesController::class);
+/////////////////admin dashbopard ( salon-reservation ) ///////////////////////////
+Route::resource('/SalonReservation',ReservationController::class);
+Route::resource('/UserSalonBook',UserSalonBookController::class);
+
+// Route::resource('/homeServicesReservation',ReservationController::class);
 
 
 
@@ -123,3 +133,12 @@ Route::controller(RegisterController::class)->group(function(){
     Route::post('logout', 'destroy')->name('logout');
 });
 
+
+
+
+
+// User Pages with controller
+
+Route::get('/SalonUser' , [SalonUser::class,'index']);
+Route::get('/HomeUser' , [HomeUser::class,'index']);
+Route::resource('/ProfileUser' , ProfileUserController::class);

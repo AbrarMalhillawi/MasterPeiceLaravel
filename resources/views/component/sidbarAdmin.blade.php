@@ -59,7 +59,7 @@
                 </g>
               </svg>
             </span>
-            <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2">CottonCandy</span>
           </a>
 
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -147,6 +147,24 @@
               <div data-i18n="Analytics">homeServices-services</div>
             </a>
           </li>
+
+          <li class="menu-header small text-uppercase"><span class="menu-header-text">Reservation</span></li>
+          
+          {{-- for salonat_reservation --}}
+          <li class="menu-item ">
+            <a href="{{route('SalonReservation.index')}}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-detail"></i>
+              <div data-i18n="Analytics">Salons-Reservation</div>
+            </a>
+          </li>
+
+          {{-- for homeServices_reservation --}}
+          {{-- <li class="menu-item ">
+            <a href="{{route('homeServicesReservation.index')}}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-detail"></i>
+              <div data-i18n="Analytics">homeServices-Reservation</div>
+            </a>
+          </li> --}}
 
 
         </ul>

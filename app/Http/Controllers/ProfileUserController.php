@@ -5,7 +5,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class ProfileUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users= User::all();
-        // return $users ;
-        return view('admin.users.index' , compact('users'));
-            
     
     }
 
@@ -28,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+
     }
 
     /**
@@ -39,25 +35,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user_img = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/userimage',$user_img);
-        var_dump($request->file('upload_file'));
-
-        // insert user
-        $users = new User();
-        $users->name = $request->name;
-        $users->email = $request->email;
-        $users->phone = $request->phone;
-        $users->role = $request->role;
-        $users->address = $request->address;
-        $users->password = Hash::make($request->password);
-        // $users->password =$request->password;
-        $users->User_Image = $user_img;
-        $users->save();
-        return redirect('user');
-        
     }
-
     /**
      * Display the specified resource.
      *
@@ -77,13 +55,6 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
-        $user = User::find($id);
-        if (! $user) {
-            return redirect('user');
-        }
-        // return view('admin.users.update',compact('user'));
-        return view('user.editProile',compact('user'));
     }
 
     /**
@@ -100,9 +71,10 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->address = $request->address;
-        $user->password = Hash::make($request->password);
+        // $user->password = Hash::make($request->password);
         // $user->password = $request->password;
         // $user->User_Image = $user_img;
+        
         if ($request->hasFile('image')) {
             $user_img = $request->file('image')->getClientOriginalName();
             $request->file('image')->storeAs('public/userimage',$user_img);
@@ -111,9 +83,9 @@ class UserController extends Controller
         // $user->role = $request->role;
         $user->save();
         
-        return redirect('account');
         
-        // return redirect('userProfile');
+        
+        return redirect('userProfile');
     
     }
 
@@ -125,11 +97,5 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-
-        $user = User::findorfail($id);
-        $user->delete(); 
-        return redirect()->route('user.index');
-        // return view('admin.users.index',compact('users'));
-    
     }
 }

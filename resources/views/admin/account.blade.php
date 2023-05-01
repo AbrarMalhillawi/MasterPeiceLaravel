@@ -74,10 +74,16 @@
                   <div class="card mb-4">
                     <h5 class="card-header">Profile Details</h5>
                     <!-- Account -->
+                    <hr class="my-0" />
+                    <div class="card-body">
+                      <form action="{{route('user.update', (Auth()->user()->id))}}" method="POST" enctype="multipart/form-data">
+                        @method('PUT')
+                        @csrf
                     <div class="card-body">
                       <div class="d-flex align-items-start align-items-sm-center gap-4">
                         <img
-                          src="{{Auth()->user()->image}}"
+                          {{-- src="{{Auth()->user()->image}}" --}}
+                          src="{{ asset('storage/userimage/' . Auth::user()->User_Image) }}"
                           alt="user-avatar"
                           class="d-block rounded"
                           height="100"
@@ -103,10 +109,6 @@
                       </div>
                     </div>
                     <hr class="my-0" />
-                    <div class="card-body">
-                      <form action="{{route('user.update', (Auth()->user()->id))}}" method="POST" enctype="multipart/form-data">
-                        @method('PUT')
-                        @csrf
                         <div class="row">
                           <div class="mb-3 col-md-12">
                             <label for="firstName" class="form-label">User Name</label>
