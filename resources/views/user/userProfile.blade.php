@@ -163,7 +163,7 @@
                                     {{-- {{dd($res)}}; --}}
                                     <div id="input-address" class="form-control form-control-alternative"> 
                                       <div class="test">
-                                        <p> your resrvation At <strong>{{$res->SalonName}}</strong> is </p>
+                                        <p> your resrvation At <strong>{{$res->SalonName}}</strong> on Price <strong>{{$res->price}} </strong> is </p>
                                         @if ($res->status == 'Pending')
                                           <button class="Waiting">Pending</button>
                                           @elseif ($res->status == 'Rejected')
@@ -178,7 +178,7 @@
                                     {{-- {{dd($res2)}}; --}}
                                     <div id="input-address" class="form-control form-control-alternative"> 
                                       <div class="test">
-                                        <p> your resrvation At <strong>{{$res2->HomeServicesName}}</strong> is </p>
+                                        <p> your resrvation At <strong>{{$res2->HomeServicesName}}</strong> on Price <strong>{{$res2->price}} </strong> is </p>
                                         @if ($res2->status == 'Pending')
                                           <button class="Waiting">Pending</button>
                                           @elseif ($res2->status == 'Rejected')
