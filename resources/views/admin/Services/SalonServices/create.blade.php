@@ -54,6 +54,7 @@
                                 aria-label="salon Id"
                                 aria-describedby="basic-icon-default-fullname2"
                                 name="Salon_id"
+                                value="{{$id_SalonServices}}"
                                 {{-- value="{{$SalonService->SalonId}}" --}}
                               />
                             </div>

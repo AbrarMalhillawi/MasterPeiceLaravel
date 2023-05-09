@@ -7,13 +7,17 @@ use App\Http\Controllers\SalonController;
 use App\Http\Controllers\SalonServicesController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\HomeUser;
 use App\Http\Controllers\LoginAdminController;
 use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\HomeReservationController;
 use App\Http\Controllers\UserSalonBookController;
 use App\Http\Controllers\SalonUser;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserHomeBook;
 use App\Models\HomeServices_Services;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -42,6 +46,10 @@ Route::get('/homeService', function () {
     return view('user.homeservices');
 });
 
+
+// Route::get('/salonat', function () {
+//     return view('user.Salonat');
+// });
 // Route::get('/Salonat', function () {
 //     return view('user.Salonat');
 // });
@@ -69,6 +77,16 @@ Route::get('/editUserProfile', function () {
 
 
 
+Route::get('/book', function () {
+    return view('user.SalonBook');
+});
+Route::get('/bookHomeServices', function () {
+    return view('user.HomeBook');
+});
+
+
+
+
 // ////////////////////////////// login admin //////////////////////////////
 
 
@@ -91,6 +109,7 @@ Route::get('/account', function ()
     Route::get('/admin', function () {
         return view('admin.dashboard');
     });
+   
 
 
 
@@ -107,11 +126,10 @@ Route::resource('/salon',SalonController::class);
 Route::resource('/salonServices',SalonServicesController::class);
 /////////////////admin dashbopard ( salon-services ) ///////////////////////////
 Route::resource('/homeServices_Services',HomeServicesServicesController::class);
-/////////////////admin dashbopard ( salon-reservation ) ///////////////////////////
+/////////////////admin dashbopard ( reservation ) ///////////////////////////
 Route::resource('/SalonReservation',ReservationController::class);
-Route::resource('/UserSalonBook',UserSalonBookController::class);
+Route::resource('/HomeServicesReservation',HomeReservationController::class);
 
-// Route::resource('/homeServicesReservation',ReservationController::class);
 
 
 
@@ -122,6 +140,11 @@ Route::resource('/Contact' , ContactController::class);
 
 });
 
+
+//////////salon Reservation ///////////////////////////
+
+Route::resource('/UserSalonBook',UserSalonBookController::class);
+Route::resource('/UserHomeBook',UserHomeBook::class);
 /////////////////login and regester  ///////////////////////////
 
 Route::controller(RegisterController::class)->group(function(){
@@ -141,4 +164,25 @@ Route::controller(RegisterController::class)->group(function(){
 
 Route::get('/SalonUser' , [SalonUser::class,'index']);
 Route::get('/HomeUser' , [HomeUser::class,'index']);
-Route::resource('/ProfileUser' , ProfileUserController::class);
+Route::resource('ProfileUser' , ProfileUserController::class);
+
+
+
+
+/////search controller 
+
+Route::get('/editUserProfile', function () {
+    return view('user.editProfile');
+});
+
+// Route::post('/Search' , [SearchController::class,'searchSalon']);
+// Route::post('/search', [SearchController::class, 'searchSalon'])->name('search');
+Route::post('/search', [SearchController::class, 'searchSalon'])->name('search.searchSalon');
+Route::post('/searchHome', [SearchController::class, 'searchHome'])->name('search.searchHome');
+
+
+
+// discount 
+Route::resource('discount' , DiscountController::class);
+
+

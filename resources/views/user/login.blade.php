@@ -12,47 +12,10 @@
 <body>
 
     <div class="Head">
-        <nav class="navFlex">
-
-            <img class="Logo" src="../Images/logo.gif">
-
-            <ul>
-                <li><a href="/homepage">Home</a></li>
-                <li><a href="">Salonat</a></li>
-                <li><a href="">Home Services</a></li>
-                {{-- <li><a href="">PRODUCT</a></li> --}}
-                <li><a href="">About</a></li>
-                <li><a href="">Contact</a></li>
-                @if (!Auth::user())
-                        <li><a href="/regester">Rergeter</a></li>
-                       <li><a href="/login"  style="color:rgb(166, 29, 116);">Login</a></li>
-    
-                       @else
-                       {{-- <li><a href="/Account">Account</a></li> --}}
-                      <li><a href="{{route('logout')}}">Logout</a></li>
-                       <a href="/userProfile"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                        </svg> </a>
-    
-                        @endif
-            </ul>
-
-                <div class="SearchBar">
-                    <input class="searchInp" type="text" placeholder="Search...">
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </div>
+       
 
 
-               
-
-        </nav>
-
-
-                <div class="LoginForm">
+                {{-- <div class="LoginForm">
                     <h2><b> LOGIN </b></h2>
 
                     <form action="{{route('go.login')}}" method="POST" enctype="multipart/form-data">
@@ -83,7 +46,55 @@
                               login
                             </button>
                        </form>
-                </div>
+                </div> --}}
+
+
+
+
+
+
+                <section class="signup">
+                    <div class="container">
+                        <div class="signup-content">
+                            <form action="{{route('go.login')}}" method="POST" enctype="multipart/form-data" id="signup-form" class="signup-form">
+                                @csrf
+                                <img class="Logo" src="../Images/Logo.png" alt="">
+                                <h2 class="form-title">Login An Account</h2>
+                                <div class="form-group">
+                                    <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" class="@error('email') is-invalid @enderror" />
+                                    @error('email')
+                                    <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-input" name="password" id="password" placeholder="Password" class="@error('password') is-invalid @enderror" />
+                                    <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                                    @error('password')
+                                    <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                @if(session()->has('message'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('message') }}
+                                    </div>
+                                @endif
+                                {{-- <div class="form-group">
+                                    <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                                </div> --}}
+                                <div class="form-group">
+                                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submit" id="submit" class="form-submit" value="Login"/>
+                                </div>
+                            </form>
+                            <p class="loginhere">
+                               You Don't Have already an account ? <a href="/regester" class="loginhere-link">Register here</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
     </div>
 
 

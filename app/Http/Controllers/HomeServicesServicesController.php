@@ -26,7 +26,7 @@ class HomeServicesServicesController extends Controller
      */
     public function create()
     {
-        return view('admin.Services.HomeServices.create');
+        // return view('admin.Services.HomeServices.create');
     }
 
     /**
@@ -60,9 +60,12 @@ class HomeServicesServicesController extends Controller
      * @param  \App\Models\HomeServices_Services  $homeServices_Services
      * @return \Illuminate\Http\Response
      */
-    public function show(HomeServices_Services $homeServices_Services)
+    public function show($id)
     {
-        //
+        $id_homeServices=$id;
+        return view('admin.Services.HomeServices.create',compact('id_homeServices'));
+
+        
     }
 
     /**

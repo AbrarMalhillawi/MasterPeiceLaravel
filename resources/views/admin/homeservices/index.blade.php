@@ -1,6 +1,6 @@
 
 @include('component/master')
-
+@section('HomeServicesActive', 'active')
   <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
@@ -95,7 +95,7 @@
                           </div>
 
                           <div>
-                            <a href="{{route('homeServices_Services.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a>
+                            <a href="{{route('homeServices_Services.show',$homeservice->id)}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a>
                           </div>
                         </td>
 

@@ -50,10 +50,11 @@
                                 type="text"
                                 class="form-control"
                                 id="basic-icon-default-fullname"
-                                placeholder="salon Id"
-                                aria-label="salon Id"
+                                placeholder="homeservicse Id"
+                                aria-label="homeservicse"
                                 aria-describedby="basic-icon-default-fullname2"
                                 name="HomeServices_id"
+                                value="{{$id_homeServices}}"
                               />
                             </div>
                           </div>

@@ -1,5 +1,5 @@
 /* /////////////////////////CSS FOR LANDING PAGE AND NAV BAR////////////////////// */
-
+/* 
 * {
     
     margin: 0px;
@@ -9,15 +9,16 @@
 }
 
 .Head{
-    height: 110vh;
+    height: 100%;
     width: 100%;
     background-image: linear-gradient(rgba(44, 46, 48, 0.5),rgba(100, 57, 84, 0.7));
-    /* background-color:gr #b6aeab; */
     position: relative;
     background-size: cover;
     background-position: center;
 
 }
+
+
 .inputEdit
 {
  width:100px;
@@ -49,9 +50,11 @@
 }
 
 .Logo{
-    width: 70px;
-    height: 70px;
-}
+    margin-left: -3%;
+    margin-top: -1.0%;
+      width: 220px;
+      height: 70px;
+  }
 nav li {
     list-style: none;
     display: inline-block;
@@ -118,8 +121,127 @@ nav ul li a:hover{
   
 }
 
+ */
 
 
+
+ /* ************************************* */
+ * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  .Head {
+    /* height: 100vh; */
+    width: 100%;
+    background-image: linear-gradient(rgba(44, 46, 48, 0.5),rgba(100, 57, 84, 0.7));
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .navFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 17px;
+  }
+  
+  .Logo {
+    margin-left: -3%;
+    margin-top: -1.0%;
+    width: 220px;
+    height: 70px;
+  }
+  
+  nav li {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 24px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: none;
+    color: rgb(166, 29, 116);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navFlex {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    nav ul li {
+      display: block;
+      padding: 8px 0;
+    }
+    nav ul li:first-child {
+      margin-top: 20px;
+    }
+    nav ul li:last-child {
+      margin-bottom: 20px;
+    }
+  }
+/* ///////////////////////////////////////////////////// */
+
+
+.SearchBar{
+    height: 28px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.SearchBar input{
+    width: 0px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 1s;
+    background: transparent;
+}
+
+.SearchBar:hover input{
+    width: 120px;
+}
+.SearchBar a .fas{
+    color: rgb(166, 29, 116);
+    font-size: 18px;
+}
+
+.icon{
+    color: white;
+}
+
+.icons a{
+    text-decoration: none;
+}
+.icon:hover{
+    color: rgb(166, 29, 116);
+  
+}
+ /* ************************************* */
 /* ///////////////////////// END CSS FOR LANDING PAGE AND NAV BAR////////////////////// */
 
 body {
@@ -127,20 +249,21 @@ body {
 }
 
 .padding {
-    padding: 3rem !important
+    padding: 2rem !important
 }
 
 .user-card-full {
     overflow: hidden;
+    width: 100%;
     /* width: 40em; */
 }
 
 .page-content
 {
-    margin-left:90px;
+    margin-left:30px;
 }
 .card {
-    border-radius: 5px;
+    border-radius: 5%;
     -webkit-box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
     box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
     border: none;
@@ -271,3 +394,178 @@ p {
     border-radius: 50%;
 }
 
+
+
+
+
+
+
+
+/* //////css for information profile /////////// */
+
+.card-body {
+    padding: 1.5rem;
+    flex: 1 1 auto;
+}
+
+.heading-small {
+    font-size: .75rem;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.text-muted {
+    color: #8898aa !important;
+}
+
+
+.mb-4,
+.my-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mt-4,
+.my-4 {
+  margin-top: 1.5rem !important;
+}
+
+@media (min-width: 992px) {
+
+    .pl-lg-4 {
+      padding-left: 1.5rem !important;
+    }
+}
+
+
+.row {
+    display: flex;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-wrap: wrap;
+  }
+
+
+
+  .col-md-12{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 10px;
+  margin-bottom: 2em;
+}
+
+
+.form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  
+.focused .input-group-alternative {
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08) !important;
+  }
+  
+  .focused .input-group {
+    box-shadow: none;
+  }
+  
+  .focused .input-group-text {
+    color: #8898aa;
+    border-color: rgba(50, 151, 211, .25);
+    background-color: #fff;
+  }
+  
+  .focused .form-control {
+    border-color: rgba(50, 151, 211, .25);
+  }
+
+  
+.form-control {
+    font-size: 1rem;
+    line-height: 1.5;
+    display: block;
+    width: 100%;
+    height: calc(2.75rem + 2px);
+    padding: .625rem .75rem;
+    transition: all .2s cubic-bezier(.68, -.55, .265, 1.55);
+    color: #8898aa;
+    border: 1px solid #cad1d7;
+    border-radius: .375rem;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: none;
+    margin-bottom: 2em;
+  }
+
+
+
+
+  .test {
+    display: flex;
+    align-items: center;
+    width: 100% !important;
+    height: 100%;
+    /* max-width: 700px !important; */
+  
+  }
+  .test p {
+    font-size:large ;
+    flex: 1;
+    outline: none;
+    margin: 0;
+    padding: .625rem .75rem;
+  
+  
+  }
+  
+  .test button  {
+    width: 100px;
+    height: 100%;
+    font-size: 15px;
+  }
+  
+  .Aprove {
+    background-color: #2dce89;
+    color: white;
+    border: none;
+  }
+  
+  .NotAprove{
+    background-color: #e23715;
+    color: white;
+    border: none;
+  }
+  
+  .Waiting{
+    background-color: #e8c413;
+    color: white;
+    border: none;
+  }
+
+
+
+
+
+
+
+
+
+  
+  @media screen and (max-width: 768px) {
+  .test button  {
+    width: 57px;
+    height: 70%;
+    font-size: 13px;
+  }
+
+  .test p {
+    flex: 1;
+    outline: none;
+    margin: 0;
+    padding: .625rem .75rem;
+    font-size: small;
+  
+  }
+}

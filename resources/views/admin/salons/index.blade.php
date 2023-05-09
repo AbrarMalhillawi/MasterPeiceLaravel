@@ -1,6 +1,6 @@
 
 @include('component/master')
-
+@section('SalonsActive', 'active')
   <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
@@ -96,7 +96,8 @@
                           </div>
 
                           <div>
-                            <a href="{{route('salonServices.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a>
+                            <a href="{{route('salonServices.show',$salon->id)}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a>
+                            {{-- <a href="{{route('salonServices.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a> --}}
                           </div>
 
                         </td>

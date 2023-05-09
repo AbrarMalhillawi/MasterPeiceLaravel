@@ -25,6 +25,8 @@ return new class extends Migration
             $table->text('comment')->nullable();
             $table->date('res_date');
             $table->decimal('price');
+            $table->string('SalonName');
+            $table->string('code')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

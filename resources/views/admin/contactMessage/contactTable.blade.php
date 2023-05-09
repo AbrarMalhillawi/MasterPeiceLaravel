@@ -1,5 +1,5 @@
 @include('component/master')
-
+@section('ContactActive', 'active')
   <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">

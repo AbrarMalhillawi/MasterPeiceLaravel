@@ -14,7 +14,7 @@ class Reservation extends Model
     use SoftDeletes;
 
 
-    protected $fillable = ['first_name', 'last_name', 'User_Id','phoneNumber','email','res_date','price','status','comment','Salon_Services_Id'];
+    protected $fillable = ['first_name', 'last_name', 'User_Id','phoneNumber','email','res_date','price','status','comment','Salon_Services_Id','SalonName','code'];
    
 
     public function SalonServices()

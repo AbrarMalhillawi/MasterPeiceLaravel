@@ -27,7 +27,9 @@ class ReservationController extends Controller
                 'comment' => $reservation->comment,
                 'res_date' => $reservation->res_date,
                 'status' => $reservation->status,
+                'SalonName' => $reservation->SalonName,
                 // 'service_name' => isset($reservation->service) ? $reservation->service->name : "",
+                'Salon_Services_Id' => isset($reservation->service) ? $reservation->service->id : "",
 
 
             ];
@@ -73,7 +75,7 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function edit(Reservation $reservation)
+    public function edit($id)
     {
         // $data = Reservation::findOrfail($id);
         // return view('Admin.pages.admin.reservationTable.edit', ['data' => $data]);
@@ -86,11 +88,19 @@ class ReservationController extends Controller
      * @param  \App\Models\Reservation  $reservation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reservation $reservation)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $data = Reservation::findOrfail($id);
 
+        $data->status = $request->status;
+
+        $data->save();
+        //-------------------------------
+        // return view('admin.Reservation.homeReservation.index',compact('reservations'));
+        
+        return redirect('SalonReservation');
+       
+    }
     /**
      * Remove the specified resource from storage.
      *

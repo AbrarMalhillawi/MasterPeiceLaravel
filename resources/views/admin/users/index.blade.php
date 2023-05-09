@@ -1,6 +1,6 @@
 
 @include('component/master')
-
+@section('UserActive', 'active')
   <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
@@ -57,7 +57,17 @@
                               class="avatar avatar-xs pull-up"
                               title="Lilian Fuller"
                             >
-                            {{-- src="{{URL::asset('storage/userimage/'.$user->User_Image)}}" --}}
+
+
+                            {{-- @if (auth()->check() && auth()->user()->User_Image == NULL)
+                            <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+                            <img src="../assets/img/avatars/1.png" class="img-radius" alt="User-Profile-Image" width="100px" >
+                            @else
+                            <img src="{{ asset('storage/userimage/' . auth()->user()->User_Image) }}" class="img-radius image_profile" alt="User Image">
+                            @endif --}}
+
+
+                            
                               <img src="{{URL::asset('storage/userimage/'.$user->User_Image)}}" alt="Avatar" class="rounded-circle" />
                             </li>
                           </ul>

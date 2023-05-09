@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Home_Reservation;
+use App\Models\Reservation;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -44,7 +47,14 @@ class ProfileUserController extends Controller
      */
     public function show($id)
     {
-         
+    $reservations = Reservation::where('User_Id', $id)->get();
+    $Home_Reservation = Home_Reservation::where('User_Id', $id)->get();
+
+    return view('user.userProfile', compact('reservations','Home_Reservation'));
+
+
+
+
     }
 
     /**

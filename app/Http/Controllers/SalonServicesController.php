@@ -25,7 +25,7 @@ class SalonServicesController extends Controller
      */
     public function create()
     {
-        return view('admin.Services.SalonServices.create');
+        // return view('admin.Services.SalonServices.create');
     }
 
 
@@ -69,9 +69,11 @@ class SalonServicesController extends Controller
      * @param  \App\Models\SalonServices  $salonServices
      * @return \Illuminate\Http\Response
      */
-    public function show(SalonServices $salonServices)
+    public function show($id)
     {
-        //
+        $id_SalonServices=$id;
+        return view('admin.Services.SalonServices.create',compact('id_SalonServices'));
+
     }
 
     /**

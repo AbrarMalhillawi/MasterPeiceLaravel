@@ -12,31 +12,34 @@
 <body>
 
     <div class="Head">
-        <nav class="navFlex">
 
-            <img class="Logo" src="../Images/logo.gif">
+        {{-- <nav class="navFlex">
+
+            <img class="Logo" src="{{ URL::asset('../PIC/roj4.png') }} " >
 
             <ul>
                 <li><a href="/homepage">HOME</a></li>
                 <li><a href="">Salonat</a></li>
                 <li><a href="">Home Services</a></li>
-                {{-- <li><a href="">PRODUCT</a></li> --}}
                 <li><a href="">ABOUT</a></li>
                 <li><a href="">CONTACT</a></li>
-                @if (!Auth::user())
-                        <li><a href="/regester"  style="color:rgb(166, 29, 116);">Rergeter</a></li>
-                       <li><a href="/login">Login</a></li>
-    
-                       @else
-                       {{-- <li><a href="/Account">Account</a></li> --}}
-                      <li><a href="{{route('logout')}}">Logout</a></li>
-                       <a href="/userProfile"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                            <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                        </svg> </a>
-    
-                        @endif
+                        @if (!Auth::user())
+                    <li><a href="/regester" style="color:rgb(166, 29, 116);">Register</a></li>
+                   <li><a href="/login">Login</a></li>
+
+                   @else
+                   @if (auth()->user()->role!='User')
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>                   <li><a href="/admin" target="_blank">Dashboard</a></li>
+                   <li><a href="/admin" target="_blank">Dashboard</a></li>
+                   <li><a href="{{route('logout')}}">Logout</a></li>
+
+                   @else
+
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>                   <li><a href="/admin" target="_blank">Dashboard</a></li>
+                   <li><a href="{{route('logout')}}">Logout</a></li>
+
+                   @endif
+                   @endif
             </ul>
 
                 <div class="SearchBar">
@@ -49,10 +52,10 @@
 
              
 
-        </nav>
+        </nav> --}}
 
 
-                <div class="LoginForm">
+                {{-- <div class="LoginForm">
                     <h2><b> REGISTER </b></h2>
                     <form action="{{route('register')}}" method="POST" enctype="multipart/form-data">
                         @csrf
@@ -99,5 +102,60 @@
                             </button>
     
                        </form>
-                </div>
+                </div> --}}
+
+
+                <section class="signup">
+                    <!-- <img src="images/signup-bg.jpg" alt=""> -->
+                    <div class="container">
+                        <div class="signup-content">
+                            <form action="{{route('register')}}" method="POST" enctype="multipart/form-data" id="signup-form" class="signup-form">
+                                @csrf
+                                <img class="Logo" src="../Images/Logo.png" alt="">
+                                <h2 class="form-title">Create account</h2>
+                                <div class="form-group">
+                                    <input type="text" class="form-input" name="name" id="name" placeholder="Your Name" class="@error('name') is-invalid @enderror" value="{{ old('name')}}"/>
+                                    @error('name')
+                                    <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" class="@error('email') is-invalid @enderror" value="{{ old('email')}}"/>
+                                    @error('email')
+                                    <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-input" name="phone" id="password" placeholder="Phone Number" class="@error('phone') is-invalid @enderror" value="{{ old('phone')}}"/>
+                                    @error('phone')
+                                    <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-input" name="password" id="password" placeholder="Password" class="@error('password') is-invalid @enderror" value="{{ old('password')}}"/>
+                                    <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                                    @error('password')
+                                    <div class="error">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                {{-- <div class="form-group">
+                                    <input type="password" class="form-input" name="re_password" id="re_password" placeholder="Repeat your password"/>
+                                </div> --}}
+                                <div class="form-group">
+                                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                                </div>
+                            </form>
+                            <p class="loginhere">
+                                Have already an account ? <a href="/login" class="loginhere-link">Login here</a>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+
     </div>

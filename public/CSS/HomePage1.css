@@ -1,0 +1,403 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  .Head {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+      url("../PIC/LandingNEW.jpg");
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .navFlex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-size: 17px;
+  }
+  
+  .Logo {
+    margin-left: -3%;
+    margin-top: -1.0%;
+    width: 220px;
+    height: 70px;
+  }
+  
+  nav li {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 24px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: none;
+    color: rgb(166, 29, 116);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navFlex {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    nav ul li {
+      display: block;
+      padding: 8px 0;
+    }
+    nav ul li:first-child {
+      margin-top: 20px;
+    }
+    nav ul li:last-child {
+      margin-bottom: 20px;
+    }
+/* 
+    .Head {
+      height: 100vh;
+      width: 100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+        url("../PIC/LandingNEW.jpg");
+      position: relative;
+      background-size:cover;
+      background-position: center;
+    } */
+  }
+/* ///////////////////////////////////////////////////// */
+
+
+.SearchBar{
+    height: 28px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.SearchBar input{
+    width: 0px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 1s;
+    background: transparent;
+}
+
+.SearchBar:hover input{
+    width: 120px;
+}
+.SearchBar a .fas{
+    color: rgb(166, 29, 116);
+    font-size: 18px;
+}
+
+.icon{
+    color: white;
+}
+
+.icons a{
+    text-decoration: none;
+}
+.icon:hover{
+    color: rgb(166, 29, 116);
+  
+}
+
+/* ///////////////////////// END CSS FOR LANDING PAGE AND NAV BAR////////////////////// */
+
+
+.TitleInLandingPage {
+    font-weight:bolder;
+    font-size: larger;
+    color: white;
+    text-align: center;
+    padding-top: 9.5em;
+}
+
+.TitleInLandingPage>h1>pre {
+    font-family: 'Passion One';
+    /* font-family: 'Passion One', sans-serif !important; */
+    /* font-family: 'Passion One', cursive; */
+
+}
+
+.TitleInLandingPage>h1>pre>span {
+    color:rgb(143, 6, 93);
+    font-weight:bolder;
+    font-size:xx-large;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#buttonsBookShop {
+    text-align: center;
+    justify-content: center;
+}
+
+.BUTTONLANDING>button {
+    color: aliceblue;
+    font-weight: bold;
+    border: 2px solid ;
+    border-color: rgb(99, 17, 69);
+    background-color: rgb(100, 77, 90);
+    margin: 6px;
+}
+
+.BUTTON>button {
+    color: aliceblue;
+    border-color: rgb(187, 8, 121); 
+    background-color:  rgb(166, 29, 116);
+}
+
+.BUTTON>button:hover {
+    font-size: larger;
+}
+
+/* CSS for mobile screens */
+@media only screen and (max-width: 600px) {
+
+    .TitleInLandingPage {
+        font-size: medium;
+        padding-top: 6em;
+        display: none;
+    }
+
+    .TitleInLandingPage>h1>pre {
+        font-size: medium;
+    }
+
+    .TitleInLandingPage>h1>pre>span {
+        font-size: large;
+
+    }
+
+    .BUTTONLANDING>button {
+        font-size: medium;
+        margin: 3px;
+        display: none;
+    }
+}
+
+/* CSS for tablet screens */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+
+    .TitleInLandingPage {
+        font-size: large;
+        padding-top: 7em;
+        display: none;
+    }
+
+    .TitleInLandingPage>h1>pre {
+        font-size: large;
+        display: none;
+    }
+
+    .TitleInLandingPage>h1>pre>span {
+        font-size: x-large;
+        display: none;
+    }
+
+    .BUTTONLANDING>button {
+        font-size: large;
+        margin: 4px;
+        display: none;
+    }
+}
+
+
+
+/* //////////////////// START CSS  FOR SLIDER BRAND //////////////////*/
+@keyframes scroll
+{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-250px * 2));
+    }
+}
+.slider
+{
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position:relative;
+    width: auto;
+    padding: 3%;
+}
+
+.slider .slide-track
+{
+    animation: scroll 10s linear infinite;
+    display: flex;
+    width:calc(250 * 10);
+}
+
+.slider .slide
+{
+    height: 100px;
+    width:250px;
+}
+
+
+/* //////////////////// START CSS  FOR CUT PIC //////////////////*/
+
+.cut_pic{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 4%;
+    padding: 3%;
+    background-color: #f2f5f8;
+}
+
+.cut {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.cut h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.cut img {
+    width: 120px;
+    height: 110px;
+}
+
+@media (max-width: 768px) {
+  .cut_pic {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cut {
+    width: 100%;
+  }
+  
+  .cut img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+/* End  section for cut pic */
+
+
+
+/*   start   category  */
+
+/* Default styles */
+.sale_product {
+    width: 100%;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3%;
+  }
+  
+  #category {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 3%;
+  }
+  
+  #category > div {
+    border: 0px solid;
+    box-shadow: 10px 10px 10px 2px #676c71;
+    border-radius: 2%;
+    margin-bottom: 4%;
+    width: 30%;
+  }
+  
+  #category > div > a > img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Media queries for smaller screens */
+  @media (max-width: 768px) {
+    #category > div {
+      width: 100%;
+    }
+  }
+
+  /*   end   category  */
+
+
+
+  /* discount */
+  .containerDiscount {
+    margin: 5%;
+    border: 0px solid;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16), 0 6px 6px rgba(0, 0, 0, 0.19);
+  }
+  
+  .prev > i {
+    margin-top: 1em;
+    margin-left: -2.5em;
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(15, 13, 13);
+  }
+  
+  .next > i {
+    margin-left: 2.5em;
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(15, 13, 13);
+  }
+  
+  @media (max-width: 768px) {
+    .containerDiscount {
+      margin: 2%;
+    }
+    
+    .prev > i {
+      margin-left: -1.5em;
+      font-size: 30px;
+    }
+    
+    .next > i {
+      margin-left: 1.5em;
+      font-size: 30px;
+    }
+    
+    .carousel-inner img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+  /* discount */
+
+
+  /* icon soscial media in footer */
+.icons>i
+{
+    color:rgb(166, 29, 116);
+}

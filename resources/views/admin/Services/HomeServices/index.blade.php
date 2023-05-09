@@ -1,5 +1,5 @@
 @include('component.master')
-
+@section('homeServices-servicesActive', 'active')
 
   <body>
     <!-- Layout wrapper -->
@@ -25,7 +25,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span>  Home Service - Services</h4>
-              <a href="{{route('homeServices_Services.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a>
+              {{-- <a href="{{route('homeServices_Services.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a> --}}
 
 
               <!-- Hoverable Table rows -->
@@ -59,7 +59,6 @@
                                 class="avatar avatar-xs pull-up"
                                 title="Lilian Fuller"
                               >
-
                                 <img src="{{URL::asset("storage/images/$HomeService->ServiceImage")}}" alt="Avatar" class="rounded-circle" />
                               </li>
                             </ul>

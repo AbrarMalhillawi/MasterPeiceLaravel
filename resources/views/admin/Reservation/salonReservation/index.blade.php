@@ -1,5 +1,5 @@
 @include('component.master')
-
+@section('Salons-ReservationActive', 'active')
 
   <body>
     <!-- Layout wrapper -->
@@ -25,7 +25,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Salons Reservation</h4>
-              <a href="{{route('UserSalonBook.index')}}"><button type="button" class="btn btn-outline-primary mb-5">New Reservation</button></a>
+              {{-- <a href="{{route('UserSalonBook.index')}}"><button type="button" class="btn btn-outline-primary mb-5">New Reservation</button></a> --}}
 
 
               <!-- Hoverable Table rows -->
@@ -42,7 +42,8 @@
                         <th>phoneNumber</th>
                         <th>comment</th>
                         <th>res_date</th>
-                        <th>service_name</th>
+                        <th>salon_name</th>
+                        <th>service_id</th>
                         <th>status</th>
                         <th>Action</th>
                       </tr>
@@ -73,39 +74,48 @@
                           <td>{{$value->phoneNumber}} </td>
                           <td>{{$value->comment}} </td>
                           <td>{{$value->res_date}} </td>
-                          <td>{{$value->ServiceName}} </td>
+                          <td>{{$value->SalonName}} </td>
+                          <td>{{$value->Salon_Services_Id}} </td>
 
                           @if ($value->status=="Pending")
-                                <td><label class="badge badge-warning">Pending</label></td>
+                                <td><label class="badge badge-warning" style="background-color:rgb(213, 213, 27)">Pending</label></td>
                                
                                 @elseif($value->status=="Accepted")
                                 
-                                <td><label class="badge badge-success">Accepted</label></td>
+                                <td><label class="badge badge-success" style="background-color:green" >Accepted</label></td>
                                
                                 @else
                                 
-                                <td><label class="badge badge-danger">Rejected</label></td>
+                                <td><label class="badge badge-danger" style="background-color:rgb(216, 7, 7)">Rejected</label></td>
                                 @endif
 
 
 
                         <td>
-                            
+                          <div  >
+                            {{-- ///////////////////// --}}
 
-                            {{-- <div>
-                                <button type="button" class="btn btn-outline-primary mb-3">
-                                    <a  href="{{route('salonServices.edit', $salonService->id)}}"
-                                    > Edit</a>
-                                </button>
+                          <form  action="{{route('SalonReservation.update', $value->id)}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="status" value="Accepted">
+                            <button type="submit" style="border: none ; background-color:white"><i class="glyphicon glyphicon-ok" style="color:green"></i></button>
+                          </form>
+                       
+                            <form  action="{{route('SalonReservation.update', $value->id)}}" method="POST" enctype="multipart/form-data">
+                              @csrf
+                              @method('PUT')
+                              <input type="hidden" name="status" value="Rejected">
+                              <button type="submit" style="border: none ; background-color:white"><i class="glyphicon glyphicon-remove" style="color:red"></i></button>
+                            </form>
 
+                      </div>
 
-                            </div>
-
-                            <form action="{{Route('salonServices.destroy',$salonService->id)}}" method="POST" >
+                            {{-- <form action="{{Route('salonServices.destroy',$salonService->id)}}" method="POST" >
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit" class="btn btn-outline-primary">Delete</button>
-                              </form> --}}
+                              </form>  --}}
 
                           </td>
 

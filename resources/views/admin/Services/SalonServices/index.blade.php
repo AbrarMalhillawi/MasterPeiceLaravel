@@ -1,5 +1,5 @@
 @include('component.master')
-
+@section('SalonServicesActive', 'active')
 
   <body>
     <!-- Layout wrapper -->
@@ -25,7 +25,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Salons Services</h4>
-              <a href="{{route('salonServices.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a>
+              {{-- <a href="{{route('salonServices.show',$salon->id)}}"><button type="button" class="btn btn-outline-primary mb-5">New Service</button></a> --}}
 
 
               <!-- Hoverable Table rows -->
@@ -58,8 +58,7 @@
                                 data-bs-placement="top"
                                 class="avatar avatar-xs pull-up"
                                 title="Lilian Fuller"
-                              >
-
+                            >
                                 <img src="{{URL::asset("storage/images/$salonService->ServiceImage")}}" alt="Avatar" class="rounded-circle" />
                               </li>
                             </ul>

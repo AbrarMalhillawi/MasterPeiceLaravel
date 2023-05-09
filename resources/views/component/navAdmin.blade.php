@@ -32,7 +32,13 @@
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
               <div class="avatar avatar-online">
+                @if (auth()->check() && auth()->user()->User_Image == NULL)
+                {{-- <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius imageRadius" alt="User-Profile-Image"> --}}
                 <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                @else
+                <img src="{{ asset('storage/userimage/' . auth()->user()->User_Image) }}" class="img-radius image_profile" alt="User Image">
+                @endif
+                {{-- <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" /> --}}
               </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -41,8 +47,12 @@
                   <div class="d-flex">
                     <div class="flex-shrink-0 me-3">
                       <div class="avatar avatar-online">
+                        @if (auth()->check() && auth()->user()->User_Image == NULL)
+                        {{-- <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> --}}
                         <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                        {{-- <img src="{{Auth()->user()->image}}" alt class="w-px-40 h-auto rounded-circle" /> --}}
+                        @else
+                        <img src="{{ asset('storage/userimage/' . auth()->user()->User_Image) }}" class="img-radius image_profile" alt="User Image">
+                        @endif
                       </div>
                     </div>
                     <div class="flex-grow-1">

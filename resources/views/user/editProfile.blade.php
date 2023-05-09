@@ -40,7 +40,7 @@
     <div class="Head">
         <nav class="navFlex">
             
-            <img class="Logo" src="">
+          <img class="Logo" src="{{ URL::asset('../PIC/roj4.png') }} " >
                 <ul>
                     <li><a href="/homepage">Home</a></li>
                     <li><a href="/SalonUser">Salonat</a></li>
@@ -49,19 +49,22 @@
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                     @if (!Auth::user())
-                    <li><a href="/regester">Rergeter</a></li>
+                    <li><a href="/regester">Register</a></li>
                    <li><a href="/login">Login</a></li>
 
                    @else
-                   {{-- <li><a href="/Account">Account</a></li> --}}
-                  <li><a href="{{route('logout')}}">Logout</a></li>
-                   <a href="/userProfile" > <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="color:rgb(166, 29, 116);">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                    </svg> </a>
+                   @if (auth()->user()->role!='User')
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}" style="color:rgb(166, 29, 116);">Profile</a></li>
+                   <li><a href="/admin" target="_blank">Dashboard</a></li>
+                   <li><a href="{{route('logout')}}">Logout</a></li>
 
-                    @endif
+                   @else
+
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}" style="color:rgb(166, 29, 116);">Profile</a></li>
+                   <li><a href="{{route('logout')}}">Logout</a></li>
+
+                   @endif
+                   @endif
                 </ul>
                 {{-- search icon in nav bar --}}
                  <div class="SearchBar">   
@@ -88,8 +91,15 @@
                                                         <div class="col-sm-4 bg-c-lite-green user-profile">
                                                             <div class="card-block text-center text-white">
                                                                 <div class="m-b-25">
-                                                                    <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
-                                                                    <input 
+                                                                  @if (auth()->check() && auth()->user()->User_Image == NULL)
+                                                                  {{-- <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> --}}
+                                                                  <img src="../assets/img/avatars/1.png" class="img-radius" alt="User-Profile-Image" width="100px" >
+                                                                  @else
+                                                                  <img src="{{ asset('storage/userimage/' . auth()->user()->User_Image) }}" class="img-radius image_profile" alt="User Image">
+                                                                  @endif
+                                                                  <span><br/><br/></span>
+                                                                  
+                                                                  <input 
                                                                       type="file"
                                                                       class="form-control text-muted f-w-400 inputEdit"
                                                                       id="basic-icon-default-fullname"

@@ -80,16 +80,23 @@
                         @method('PUT')
                         @csrf
                     <div class="card-body">
-                      <div class="d-flex align-items-start align-items-sm-center gap-4">
+                      <div class="d-flex align-items-start align-items-sm-center gap-4 ">
+
+
+                        @if (auth()->check() && auth()->user()->User_Image == NULL)
+                        {{-- <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> --}}
+                        <img src="../assets/img/avatars/1.png" alt="user-avatar" class="d-block rounded "  id="uploadedAvatar" />
+                        @else
                         <img
-                          {{-- src="{{Auth()->user()->image}}" --}}
-                          src="{{ asset('storage/userimage/' . Auth::user()->User_Image) }}"
-                          alt="user-avatar"
-                          class="d-block rounded"
-                          height="100"
-                          width="100"
-                          id="uploadedAvatar"
-                        />
+                        src="{{ asset('storage/userimage/' . Auth::user()->User_Image) }}"
+                        alt="user-avatar"
+                        class="d-block rounded"
+                        height="100"
+                        width="100"
+                        id="uploadedAvatar"
+                      />
+                      @endif
+                      
                         <div class="button-wrapper">
                           <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
                             <span class="d-none d-sm-block">Upload new photo</span>

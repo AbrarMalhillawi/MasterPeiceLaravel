@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-  <link rel="stylesheet" href="CSS/HomePage.css">
+  <link rel="stylesheet" href="CSS/HomePage1.css">
   <title>homePage</title>
 </head>
 
@@ -36,7 +36,7 @@
     <div class="Head">
         <nav class="navFlex">
             
-            <img class="Logo" src="">
+          <img class="Logo" src="{{ URL::asset('../PIC/roj4.png') }} "  >
                 <ul>
                  
                     <li><a href="/homepage" style="color:rgb(166, 29, 116);">Home</a></li>
@@ -46,30 +46,25 @@
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                     @if (!Auth::user())
-                    <li><a href="/regester">REGISTER</a></li>
-                   <li><a href="/login">LOGIN</a></li>
+                    <li><a href="/regester">Register</a></li>
+                   <li><a href="/login">Login</a></li>
 
                    @else
                    @if (auth()->user()->role!='User')
-                   <li><a href="/userProfile">PROFILE</a></li>
-                   <li><a href="/admin" target="_blank">DASHBOARD</a></li>
-                   <li><a href="{{route('logout')}}">LOGOUT</a></li>
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
+                   <li><a href="/admin" target="_blank">Dashboard</a></li>
+                   <li><a href="{{route('logout')}}">Logout</a></li>
 
                    @else
-
-                   <li><a href="/userProfile">PROFILE</a></li>
-                   <li><a href="{{route('logout')}}">LOGOUT</a></li>
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
+                   {{-- <li><a href="/userProfile">Profile</a></li> --}}
+                   <li><a href="{{route('logout')}}">Logout</a></li>
 
                    @endif
                    @endif
-                    {{-- <li><a href="/login">LOGIN</a></li> --}}
+                 
                 </ul>
-                 <div class="SearchBar">   
-                    <input class="searchInp" type="text" placeholder="Search...">
-                    <a href="#">
-                        <i class="fas fa-search"></i>
-                    </a>
-                </div> 
+                 
 
         </nav>
                <!-- Title  Landing-->
@@ -86,9 +81,7 @@
           <button type="button" class="btn btn-outline-secondary" class="buttonbooknow" >BOOK NOW</button>
           
         </div>
-        {{-- <div class="BUTTONLANDING">
-          <button type="button" class="btn btn-outline-secondary">SHOP NOW</button>
-        </div> --}}
+
       </div>
     </div>
 
@@ -174,7 +167,7 @@
     <!--HOME SERVICES category  -->
     <div>
       <a href="/HomeUser">
-        <img src="../pic/pic_category/home.png" height="450" width="450" alt="">
+        <img src="../pic/pic_category/home1.png" height="450" width="450" alt="">
       </a>
 
     </div>
@@ -267,7 +260,7 @@
 
   <!-- START SECTION FOR  PRICE -->
 
-  <div class="sale_product">
+  {{-- <div class="sale_product">
     <h5> our price</h5>
     <h2>Best fixed prices in Cotton Candy</h2>
   </div>
@@ -311,18 +304,13 @@
 
     </div>
 
-  </div>
+  </div> --}}
 
 
   <!-- END  SECTION FOR PRICE -->
 
 
 
-  {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fa-solid fa-left-long"></i></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-   --}}
 
 
 
@@ -331,10 +319,10 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
       <div class="carousel-inner bg-primary" width="100%">
         <div class="carousel-item active ">
-          <img src="../pic/discaount_pic/sale2.png" class="d-block " alt="SALE1">
+          <img src="../pic/discaount_pic/sale1.png" class="d-block " alt="SALE1">
         </div>
         <div class="carousel-item">
-          <img src="../pic/discaount_pic/sale1.png" class="d-block " alt="SALE2">
+          <img src="../pic/discaount_pic/sale2.png" class="d-block " alt="SALE2">
         </div>
         <div class="carousel-item">
           <img src="../pic/discaount_pic/sale3.png" class="d-block " alt="SALE3">

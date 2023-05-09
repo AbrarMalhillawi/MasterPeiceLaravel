@@ -1,6 +1,6 @@
 
 @include('component/master')
-
+@section('CategoryActive', 'active')
   <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">

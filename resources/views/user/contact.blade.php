@@ -17,7 +17,7 @@
     <div class="Head">
         <nav class="navFlex">
             
-            <img class="Logo" src="">
+            <img class="Logo" src="{{ URL::asset('../PIC/roj4.png') }} " >
                 <ul>
                     <li><a href="/homepage">Home</a></li>
                     <li><a href="/SalonUser">Salonat</a></li>
@@ -26,27 +26,30 @@
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact"  style="color:rgb(166, 29, 116);">Contact</a></li>
                     @if (!Auth::user())
-                    <li><a href="/regester">Rergeter</a></li>
+                    <li><a href="/regester">Register</a></li>
                    <li><a href="/login">Login</a></li>
 
                    @else
-                   {{-- <li><a href="/Account">Account</a></li> --}}
-                  <li><a href="{{route('logout')}}">Logout</a></li>
-                   <a href="/userProfile"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                        <circle cx="12" cy="7" r="4"></circle>
-                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-                    </svg> </a>
+                   @if (auth()->user()->role!='User')
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
+                   <li><a href="/admin" target="_blank">Dashboard</a></li>
+                   <li><a href="{{route('logout')}}">Logout</a></li>
 
-                    @endif
+                   @else
+
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
+                   <li><a href="{{route('logout')}}">Logout</a></li>
+
+                   @endif
+                   @endif
                 </ul>
               {{-- search icon in nav bar --}}
-              <div class="SearchBar">   
+              {{-- <div class="SearchBar">   
                 <input class="searchInp" type="text" placeholder="Search...">
                 <a href="#">
                     <i class="fas fa-search"></i>
                 </a>
-            </div> 
+            </div>  --}}
 
         </nav>
 
