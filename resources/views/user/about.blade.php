@@ -23,7 +23,8 @@
 
                    @else
                    @if (auth()->user()->role!='User')
-                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>                   <li><a href="/admin" target="_blank">Dashboard</a></li>
+                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>   
+                  <li><a href="/INFO" target="_blank">Dashboard</a></li>
                    <li><a href="{{route('logout')}}">Logout</a></li>
 
                    @else

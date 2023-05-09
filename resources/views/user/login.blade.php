@@ -15,39 +15,7 @@
        
 
 
-                {{-- <div class="LoginForm">
-                    <h2><b> LOGIN </b></h2>
-
-                    <form action="{{route('go.login')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                            <label for="">E-mail</label>
-                            <br>
-                            <input type="email" name="email" placeholder="Please Enter Your Username or E-mail " class="@error('email') is-invalid @enderror">
-                            @error('email')
-                        <div class="error">{{ $message }}</div>
-                @enderror
-                            <br><br>
-                            <label for="">Password</label>
-                            <br>
-                            <input type="password" name="password"  placeholder="Please Enter Your Password" class="@error('password') is-invalid @enderror">
-                            @error('password')
-                        <div class="error">{{ $message }}</div>
-                @enderror
-                            @if(session()->has('message'))
-                                <div class="alert alert-danger">
-                                    {{ session()->get('message') }}
-                                </div>
-                            @endif
-                            <br><br>
-                            <button id="Register" >
-                                <a href="/regester" >REGISTER</a>
-                            </button>
-                            <button id="Login" type="submit">
-                              login
-                            </button>
-                       </form>
-                </div> --}}
-
+             
 
 
 
