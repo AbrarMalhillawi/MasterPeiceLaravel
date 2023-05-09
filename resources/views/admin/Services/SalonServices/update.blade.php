@@ -120,7 +120,7 @@
                             </div>
                           </div>
 
-                        <div class="row mb-3">
+                        {{-- <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">IMAGE</label>
                             <div class="col-sm-10">
                               <div class="input-group input-group-merge">
@@ -138,7 +138,7 @@
                                 />
                               </div>
                             </div>
-                          </div>
+                          </div> --}}
                           <div class="row mb-3">
                             <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Service Time</label>
                             <div class="col-sm-10">

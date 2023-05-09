@@ -23,7 +23,7 @@
 
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Salons</h4>
-              <a href="{{route('salon.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New service</button></a>
+              <a href="{{route('salon.create')}}"><button type="button" class="btn btn-outline-primary mb-5">New salon</button></a>
               <!-- Hoverable Table rows -->
               <div class="card">
                 <h5 class="card-header">SALONS</h5>

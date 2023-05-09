@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('ServiceDescription');
             $table->double('ServicePrice');
             $table->string('ServiceTime');
-            $table->string('ServiceImage')->nullable();
+            // $table->string('ServiceImage')->nullable();
             $table->timestamps();
         });
     }

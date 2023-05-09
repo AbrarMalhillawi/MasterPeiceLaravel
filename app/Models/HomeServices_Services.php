@@ -17,7 +17,6 @@ class HomeServices_Services extends Model
         return $this->belongsTo(HomeService::class);
     }
 
-    
     public function HomeReservation(){
         return $this->hasMany(Home_Reservation::class);
     }

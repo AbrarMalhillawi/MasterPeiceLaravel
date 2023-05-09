@@ -38,9 +38,9 @@ class HomeServicesServicesController extends Controller
     public function store(Request $request)
     {
         
-        $HomeServices_img = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/images',$HomeServices_img);
-        var_dump($request->file('upload_file'));
+        // $HomeServices_img = $request->file('image')->getClientOriginalName();
+        // $request->file('image')->storeAs('public/images',$HomeServices_img);
+        // var_dump($request->file('upload_file'));
 
         // insert user
         $HomeService = new HomeServices_Services();
@@ -49,7 +49,7 @@ class HomeServicesServicesController extends Controller
         $HomeService->ServiceDescription = $request->Service_description;
         $HomeService->ServicePrice = $request->Service_price;
         $HomeService->ServiceTime = $request->Service_time;
-        $HomeService->ServiceImage= $HomeServices_img;
+        // $HomeService->ServiceImage= $HomeServices_img;
         $HomeService->save();
         return redirect('homeServices_Services');
     }

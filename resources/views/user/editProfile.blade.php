@@ -135,7 +135,7 @@
                                                                       <span class="text_editProfile"> Address <span style="color:white ">..</span></span><input name="address" value="{{Auth()->user()->address}}" />
                                                                       <div >
                                                                         <br/>
-                                                                      <button type="submit" class="btn button_save">Save</button>
+                                                                      <button type="submit" class="btn button_save" style="background-color: rgb(166, 29, 116)">Save</button>
                                                             </div>
                                                             </div>
                                                         </div>

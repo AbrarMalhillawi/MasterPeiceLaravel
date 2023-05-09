@@ -14,6 +14,7 @@ use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\HomeReservationController;
+use App\Http\Controllers\INFO_Dashboard;
 use App\Http\Controllers\UserSalonBookController;
 use App\Http\Controllers\SalonUser;
 use App\Http\Controllers\SearchController;
@@ -106,10 +107,12 @@ Route::get('/account', function ()
 {
     return view('admin.account');
 });
-    Route::get('/admin', function () {
+Route::get('/admin', function () {
         return view('admin.dashboard');
     });
-   
+
+// Route::get('/INFO' ,[INFO_Dashboard::class.'index'])->name('INFO');
+Route::get('/INFO', [App\Http\Controllers\INFO_Dashboard::class, 'index'])->name('INFO');
 
 
 

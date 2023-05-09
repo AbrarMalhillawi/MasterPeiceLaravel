@@ -111,7 +111,8 @@ class UserSalonBookController extends Controller
       
 
         $salon = Salon::find($id);
-        $services = SalonServices::all();
+        // $services = SalonServices::all();
+        $services = SalonServices::where('SalonId', $id)->get();
         // dd($salon);
         return view('user.SalonBook',compact('salon','services'));
     }

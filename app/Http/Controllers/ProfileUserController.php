@@ -49,12 +49,7 @@ class ProfileUserController extends Controller
     {
     $reservations = Reservation::where('User_Id', $id)->get();
     $Home_Reservation = Home_Reservation::where('User_Id', $id)->get();
-
     return view('user.userProfile', compact('reservations','Home_Reservation'));
-
-
-
-
     }
 
     /**
@@ -81,10 +76,6 @@ class ProfileUserController extends Controller
         $user->email = $request->email;
         $user->phone = $request->phone;
         $user->address = $request->address;
-        // $user->password = Hash::make($request->password);
-        // $user->password = $request->password;
-        // $user->User_Image = $user_img;
-        
         if ($request->hasFile('image')) {
             $user_img = $request->file('image')->getClientOriginalName();
             $request->file('image')->storeAs('public/userimage',$user_img);
@@ -93,9 +84,9 @@ class ProfileUserController extends Controller
         // $user->role = $request->role;
         $user->save();
         
-        
-        
-        return redirect('userProfile');
+        return redirect()->action('App\Http\Controllers\ProfileUserController@show', $id);
+
+        // return redirect('userProfile');
     
     }
 

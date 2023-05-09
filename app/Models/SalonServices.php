@@ -30,7 +30,7 @@ class SalonServices extends Model
         'ServiceDescription',
         'ServicePrice',
         'ServiceTime',
-        'ServiceImage',
+        // 'ServiceImage',
 
     ];
 }

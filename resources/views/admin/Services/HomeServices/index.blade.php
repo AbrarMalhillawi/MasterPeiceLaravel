@@ -36,7 +36,7 @@
                     <thead>
                       <tr>
                         <th>HomeService Id</th>
-                        <th>Service Image</th>
+                        {{-- <th>Service Image</th> --}}
                         <th>Service Name</th>
                         <th>Service Description</th>
                         <th>Service Price</th>
@@ -49,8 +49,8 @@
 
 
                       <tr>
-                        <td>{{$HomeService->HomeServiceId}}</td>
-                        <td>
+                        <td>{{$HomeService->HomeServicesId}}</td>
+                        {{-- <td>
                             <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
                               <li
                                 data-bs-toggle="tooltip"
@@ -62,7 +62,7 @@
                                 <img src="{{URL::asset("storage/images/$HomeService->ServiceImage")}}" alt="Avatar" class="rounded-circle" />
                               </li>
                             </ul>
-                          </td>
+                          </td> --}}
 
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$HomeService->ServiceName}}</strong></td>
 

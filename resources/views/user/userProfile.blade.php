@@ -153,7 +153,6 @@
                 <div class="card-body">
                           <form>
                             <h6 class="heading-small text-muted mb-4">Booking Information</h6>
-                           
                             <hr class="my-4">
                             <!-- Address -->
                             <div class="pl-lg-4">
@@ -175,7 +174,6 @@
                                         </div>
                                     </div>
                                     @endforeach
-
                                     @foreach ($Home_Reservation as $res2)
                                     {{-- {{dd($res2)}}; --}}
                                     <div id="input-address" class="form-control form-control-alternative"> 

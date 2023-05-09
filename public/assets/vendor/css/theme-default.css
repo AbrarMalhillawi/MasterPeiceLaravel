@@ -8,6 +8,47 @@
   z-index: 10;
 }
 
+.cardtext
+{
+  margin-top:10% ;
+  margin-left:10% ;
+ 
+  font-weight: bold;
+}
+
+.card-body
+{
+  align-items: center;
+  color: white;
+}
+
+.card-title{
+  padding-left: 40%;
+  font-weight: bold;
+  color:white;
+  align-items: center;
+}
+
+.cardFlex
+{
+  padding: 2%;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+.card
+{
+  flex-basis: calc(25% - 10px);
+  height: auto;
+}
+
+
+
+
+
+
 .bg-menu-theme .menu-header {
   position: relative;
 }

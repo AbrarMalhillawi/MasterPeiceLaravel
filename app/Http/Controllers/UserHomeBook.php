@@ -103,7 +103,7 @@ class UserHomeBook extends Controller
         
 
         $HomeService = HomeService::find($id);
-        $services = HomeServices_Services::all();
+        $services = HomeServices_Services::where('HomeServicesId', $id)->get();
         // dd($salon);
         return view('user.HomeBook',compact('HomeService','services'));
     }

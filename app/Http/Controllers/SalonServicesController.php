@@ -47,9 +47,9 @@ class SalonServicesController extends Controller
      */
     public function store(Request $request)
     {
-        $SalonServices_img = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/images',$SalonServices_img);
-        var_dump($request->file('upload_file'));
+        // $SalonServices_img = $request->file('image')->getClientOriginalName();
+        // $request->file('image')->storeAs('public/images',$SalonServices_img);
+        // var_dump($request->file('upload_file'));
 
         // insert user
         $SalonService = new SalonServices();
@@ -58,7 +58,7 @@ class SalonServicesController extends Controller
         $SalonService->ServiceDescription = $request->Service_description;
         $SalonService->ServicePrice = $request->Service_price;
         $SalonService->ServiceTime = $request->Service_time;
-        $SalonService->ServiceImage= $SalonServices_img;
+        // $SalonService->ServiceImage= $SalonServices_img;
         $SalonService->save();
         return redirect('salonServices');
     }

@@ -10055,12 +10055,14 @@ button.list-group-item-gray.active {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  /* background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important; */
+  background-color: #F2A7B1 !important;
 }
 
 .bg-secondary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+  /* background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important; */
+  background-color: #84B4BC !important;
 }
 
 .bg-success {
@@ -10075,7 +10077,8 @@ button.list-group-item-gray.active {
 
 .bg-warning {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+  /* background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important; */
+  background-color:#F16767 !important;
 }
 
 .bg-danger {

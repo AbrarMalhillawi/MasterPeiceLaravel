@@ -38,7 +38,7 @@
             
           <img class="Logo" src="{{ URL::asset('../PIC/roj4.png') }} "  >
                 <ul>
-                 
+                
                     <li><a href="/homepage" style="color:rgb(166, 29, 116);">Home</a></li>
                     {{-- <li><a href="{{route('salon.index')}}">Salonat</a></li> --}}
                     <li><a href="/SalonUser">Salonat</a></li>
@@ -47,38 +47,38 @@
                     <li><a href="/contact">Contact</a></li>
                     @if (!Auth::user())
                     <li><a href="/regester">Register</a></li>
-                   <li><a href="/login">Login</a></li>
+                    <li><a href="/login">Login</a></li>
+                    
+                  @else
+                  @if (auth()->user()->role!='User')
+                  <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
+                  <li><a href="/admin" target="_blank">Dashboard</a></li>
+                  <li><a href="{{route('logout')}}">Logout</a></li>
 
-                   @else
-                   @if (auth()->user()->role!='User')
-                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
-                   <li><a href="/admin" target="_blank">Dashboard</a></li>
-                   <li><a href="{{route('logout')}}">Logout</a></li>
+                  @else
+                  <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
+                  {{-- <li><a href="/userProfile">Profile</a></li> --}}
+                  <li><a href="{{route('logout')}}">Logout</a></li>
 
-                   @else
-                   <li><a href="{{ route('ProfileUser.show', auth()->user()->id) }}">Profile</a></li>
-                   {{-- <li><a href="/userProfile">Profile</a></li> --}}
-                   <li><a href="{{route('logout')}}">Logout</a></li>
+                    @endif
+                    @endif
 
-                   @endif
-                   @endif
-                 
                 </ul>
-                 
+
 
         </nav>
-               <!-- Title  Landing-->
+              <!-- Title  Landing-->
     <div class="TitleInLandingPage">
         <h1>
             <pre>    ALL OF THE SAKE Of YOUR BEAUTY IN
-   <span>COTTON CANDY</span></pre>
+      <span>COTTON CANDY</span></pre>
         </h1>
       </div>
       <!-- Button Book Now In Landing -->
       <div id="buttonsBookShop">
         <div class="BUTTONLANDING">
           
-          <button type="button" class="btn btn-outline-secondary" class="buttonbooknow" >BOOK NOW</button>
+          <button type="button" class="btn btn-outline-secondary" class="buttonbooknow" ><a href="#target" style="color:white">BOOK NOW<a></button>
           
         </div>
 
@@ -159,155 +159,31 @@
 
   <!-------------------------- START SECTION FOR CATEGORY ---------------------------->
 
-  <div class="sale_product">
+  <div class="sale_product" id="target">
     <h5 style="color: white"> '</h5>
     <h2>Our Category In Cotton Candy</h2>
   </div>
-  <div id="category">
-    <!--HOME SERVICES category  -->
-    <div>
-      <a href="/HomeUser">
-        <img src="../pic/pic_category/home1.png" height="450" width="450" alt="">
-      </a>
-
-    </div>
+  <div id="category" >
     <!-- SALON SERVICES CATEGORY -->
-    <div>
+    <div >
       <a href="/SalonUser">
         <img src="../pic/pic_category/salons.png" height="450" width="450" alt="">
       </a>
     </div>
 
+    <!--HOME SERVICES category  -->
+    <div >
+      <a href="/HomeUser" >
+        <img src="../pic/pic_category/home1.png" height="450" width="450" alt="">
+      </a>
+    </div>
+    
   </div>
 
 
 
 
   <!-------------------------- END SECTION FOR CATEGORY ---------------------------->
-
-
-{{-- 
-  <!-- SECTION FOR SALE PRODUCT -->
-
-  <div class="sale_product">
-    <h5> our product</h5>
-    <h2>Top Product In Cotton Candy</h2>
-  </div>
-  <div class="SaleProduct">
-
-    <div class="arrow">
-      <i class="fa-solid fa-arrow-left"></i>
-    </div>
-    <div>
-      <img src="../pic/product_sale_pic/1.png" width="250" height="250" alt="pic1 ">
-      <div>
-        <h3>Snowfall Sparkle</h3>
-        <h4>30 $</h4>
-        <div class="BUTTON">
-          <button type="button" class="btn btn-outline-secondary">SHOP NOW</button>
-        </div>
-      </div>
-
-    </div>
-
-
-    <div>
-      <img src="../pic/product_sale_pic/2.png" width="250" height="250" alt="pic1 ">
-      <div>
-        <h3>Body Cream</h3>
-        <h4>40 $</h4>
-        <div class="BUTTON">
-          <button type="button" class="btn btn-outline-secondary">SHOP NOW</button>
-        </div>
-      </div>
-    </div>
-
-
-    <div>
-      <img src="../pic/product_sale_pic/3.png" width="250" height="250" alt="pic1 ">
-      <div>
-        <h3>oil Remover</h3>
-        <h4>40 $</h4>
-        <div class="BUTTON">
-          <button type="button" class="btn btn-outline-secondary">SHOP NOW</button>
-        </div>
-      </div>
-    </div>
-
-
-    <div>
-      <img src="../pic/product_sale_pic/1.png" width="250" height="250" alt="pic1 ">
-      <div>
-        <h3>Nourshing Oil</h3>
-        <h4>25$</h4>
-        <div class="BUTTON">
-          <button type="button" class="btn btn-outline-secondary">SHOP NOW</button>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="arrow">
-      <i class="fa-solid fa-arrow-right"></i>
-    </div>
-
-
-
-
-  </div>
-  <!-- END SECTION FOR SALE PRODUCT --> --}}
-
-
-  <!-- START SECTION FOR  PRICE -->
-
-  {{-- <div class="sale_product">
-    <h5> our price</h5>
-    <h2>Best fixed prices in Cotton Candy</h2>
-  </div>
-
-  <div class="sectionPrice">
-
-    <div id="WomanPrice">
-      <img src="../pic/PriceSection/PriceWoman.png" height="500" width="500" alt="WomanForPrice">
-    </div>
-
-
-    <div id="PoxPricePairent">
-
-      <div class="card w-75 mb-3">
-        <div class="card-body">
-          <h3 class="card-title">Price For Salon Beutay:</h3>
-
-          <h4 class="card-text">Manicure<span>______15$</span></h4>
-          <h4 class="card-text">Hair Style <span>______35$</span></h4>
-          <h4 class="card-text">Mackeup <span>______30$</span></h4>
-          <div class="BUTTON">
-            <button type="button" class="btn btn-outline-secondary">Book NOW</button>
-          </div>
-        </div>
-      </div>
-      <!-- <span>-----------------</span> -->
-
-      <div class="card w-75 mb-3">
-        <div class="card-body">
-          <h3 class="card-title">Price For Home Services:</h3>
-
-          <h4 class="card-text">Manicure<span>______20$</span></h4>
-          <h4 class="card-text">Hair Style <span>______40$</span></h4>
-          <h4 class="card-text">Mackeup <span>______35$</span></h4>
-          <div class="BUTTON">
-            <button type="button" class="btn btn-outline-secondary">Book NOW</button>
-          </div>
-        </div>
-      </div>
-
-
-    </div>
-
-  </div> --}}
-
-
-  <!-- END  SECTION FOR PRICE -->
 
 
 
