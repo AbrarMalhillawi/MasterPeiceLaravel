@@ -135,7 +135,7 @@
 							
 								<div class="btn">
 									<button class="submit-btn btnSubmit">Submit</button>
-                                    <button class="submit-btn"><a href="/HomeUser" style="text-decoration-line: none;color:white">Cancle</a></button>
+                                    <button class="submit-btn"><a href="/HomeUser" style="text-decoration-line: none;color:white">Cancel</a></button>
 								</div>
 								{{-- <div class="form-btn">
 									<button class="submit-btn">Cancle</button>
